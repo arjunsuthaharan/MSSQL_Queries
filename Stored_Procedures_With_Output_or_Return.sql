@@ -10,6 +10,7 @@ END
 
 
 -- Executing Stored Procedure
+
 DECLARE @TotalEmployees INT
 EXECUTE spGetTotalCount1 @TotalEmployees OUT
 SELECT @TotalEmployees
