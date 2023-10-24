@@ -66,3 +66,18 @@ SELECT YEAR('01/25/2000') -- returns 2000
 SELECT DATENAME(Day,'2000-01-25') -- returns 25
 SELECT DATENAME(WEEKDAY, '2000-01-25') -- returns Tuesday
 SELECT DATENAME(Month,'2000-05-25') -- returns May
+
+
+-- DATEPART function returns integer representing specified datepart (similar to datename but returns int instead of nvarchar)
+
+SELECT DATEPART(WEEKDAY, '2000-01-25') -- returns 3, representing Tuesday numerically
+
+-- DATEADD function returns DateTime after adding specified number
+
+SELECT DATEADD(DAY, 20, '2000-01-03') -- returns 2000-01-23
+SELECT DATEADD(DAY, 20, '2000-01-25') -- returns 2000-02-14
+
+-- DATEDIFF function returns integer count of difference between two specified dates
+
+SELECT DATEDIFF(DAY, '2000-01-15', '2000-01-25') -- returns 10
+SELECT DATEDIFF(DAY, '2000-01-15', '2001-01-25') -- returns 376
