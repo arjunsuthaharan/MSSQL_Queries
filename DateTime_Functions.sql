@@ -81,3 +81,12 @@ SELECT DATEADD(DAY, 20, '2000-01-25') -- returns 2000-02-14
 
 SELECT DATEDIFF(DAY, '2000-01-15', '2000-01-25') -- returns 10
 SELECT DATEDIFF(DAY, '2000-01-15', '2001-01-25') -- returns 376
+
+-- CAST and CONVERT functions to convert how date time data is displayed
+
+SELECT CAST(cDateTime as nvarchar) as convertedDateTime FROM tblDateTime
+SELECT CONVERT(nvarchar, cDateTime) as convertedDateTime FROM tblDateTime
+SELECT CONVERT(nvarchar, cDateTime, 103) as convertedDateTime FROM tblDateTime -- 103 specifies dd/mm/yyyy format, 101-105 formats exist
+
+-- Retrieving only DatePart of DateTime using CAST and CONVERT
+SELECT CONVERT(VARCHAR(10), GETDATE(), 101) -- returns current date in mm/dd/yyyy
